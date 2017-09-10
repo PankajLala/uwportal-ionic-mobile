@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>At A Glance</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+      <ion-icon name='close'></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<ion-item>
+  <ion-label>Filter</ion-label>
+  <ion-select [(ngModel)]="gender">
+    <ion-option value="f">Broker</ion-option>
+    <ion-option value="m">Date</ion-option>
+  </ion-select>
+</ion-item>
+
+</ion-content>
+<ion-footer>
+  <button ion-button full  (click)="dismiss()">Search
+      </button>
+</ion-footer>
+

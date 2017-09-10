@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Property</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngIf="property.id">      
+        <ion-card-content>
+            <h2 class="card-title">Referral Reasons</h2>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+                <h3>Reason 1</h3>
+            </ion-item>
+            <ion-item>
+                <h3>Reason 2</h3>
+            </ion-item>
+            <ion-item>
+                <h3>Reason 3</h3>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card *ngIf="property.id">      
+        <ion-card-content>
+            <h2 class="card-title">Coverage Information</h2>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+                <h3>Reason 1</h3>
+            </ion-item>
+            <ion-item>
+                <h3>Reason 2</h3>
+            </ion-item>
+            <ion-item>
+                <h3>Reason 3</h3>
+            </ion-item>
+            <ion-item>
+                <ion-label>Broker Fees</ion-label>
+                <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Referral</ion-label>
+                <ion-input type="text"></ion-input>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card *ngIf="property.id">      
+        <ion-card-content>
+            <h2 class="card-title">Broker Comments</h2>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+              <ion-textarea placeholder="Enter a description"></ion-textarea>
+            </ion-item>
+        </ion-list>
+        
+    </ion-card>
+    <ion-card *ngIf="property.id">      
+        <ion-card-content>
+            <h2 class="card-title">Underwriter Comments</h2>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+              <ion-textarea placeholder="Enter a description"></ion-textarea>
+            </ion-item>
+        </ion-list>
+
+    </ion-card>
+    <ion-card *ngIf="property.id">      
+        <ion-card-content>
+            <h2 class="card-title">Remarks</h2>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+              <ion-textarea placeholder="Enter a description"></ion-textarea>
+            </ion-item>
+            
+        </ion-list>
+        <ion-item>
+            <button ion-button icon-left (click)="favorite(property)" clear item-left>
+                <ion-icon name="Quote"></ion-icon>
+                Quote
+            </button>
+            <button ion-button icon-left (click)="decline(property)" clear item-right>
+                <ion-icon name="Decline"></ion-icon>
+                Decline
+            </button>
+        </ion-item>
+    </ion-card>
+    
+</ion-content>
