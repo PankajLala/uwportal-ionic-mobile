@@ -1,0 +1,21 @@
+.searchbar-input {
+  box-shadow: none !important;
+}
+
+ion-footer {
+  padding: 8px 16px !important;
+}
+
+inset-modal {
+  // transparent black background overlay
+  background-color: rgba(0, 0, 0, .5) !important;
+  transition: opacity .25s ease-in-out;
+  padding: 20vh 10vw;
+}
+
+.segment-ios .segment-button {
+    color: #fff;
+    background-color: #3399FF;
+    opacity: 1;
+    transition: 100ms all linear;
+}
