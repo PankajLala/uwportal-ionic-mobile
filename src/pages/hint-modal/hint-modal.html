@@ -11,12 +11,22 @@
 <ion-content padding>
 <ion-item>
   <ion-label>Filter</ion-label>
-  <ion-select [(ngModel)]="gender">
-    <ion-option value="f">Broker</ion-option>
-    <ion-option value="m">Date</ion-option>
+  <ion-select (ionChange)="setSortValues(sSort)" [(ngModel)]="sSort">
+    <ion-option [value]="sSort" *ngFor="let sSort of sSorts">{{sSort.name}} </ion-option>
   </ion-select>
 </ion-item>
-
+<ion-item *ngIf="selectedBroker === true">
+    <ion-label>Broker</ion-label>
+    <ion-select [(ngModel)]="sBroker" >
+        <ion-option [value]="sBroker" *ngFor="let sBroker of sBrokers">{{sBroker.name}}</ion-option>
+    </ion-select>
+</ion-item> 
+<ion-item *ngIf="selectedMonth === true">
+    <ion-label>Month</ion-label>
+    <ion-select [(ngModel)]="sMonth" >
+        <ion-option [value]="sMonth" *ngFor="let sMonth of sMonths">{{sMonth.name}}</ion-option>
+    </ion-select>
+</ion-item>
 </ion-content>
 <ion-footer>
   <button ion-button full  (click)="dismiss()">Search

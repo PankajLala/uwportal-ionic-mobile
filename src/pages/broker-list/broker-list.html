@@ -3,23 +3,34 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-searchbar [(ngModel)]="searchKey" 
-                        (click)="onSearch($event)"></ion-searchbar>
+        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+                       (ionCancel)="onCancel($event)" (click)="onSearch($event)"></ion-searchbar>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
-
     <ion-list>
-
-        <button ion-item *ngFor="let broker of brokers" (click)="openBrokerDetail(broker)">
-            <ion-avatar item-left>
-                <img src="{{broker.picture}}"/>
-            </ion-avatar>
-            <h2>{{broker.name}}</h2>
-            <p>{{broker.title}}</p>
-        </button>
-
+        <ion-item-sliding *ngFor="let broker of brokers">
+            <button ion-item (click)="openBrokerDetail(broker)">
+                <h2>{{broker.title}}/ {{broker.city}}</h2>
+                <p>{{broker.state}}, {{broker.price}} ∙ {{ broker.zip }}</p>
+                <p>{{broker.EDate}}, {{broker.ExpDate}} ∙ {{ broker.CDate }}</p>
+            </button>
+            <ion-item-options>
+                <button danger (click)="deleteItem(broker)">Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
     </ion-list>
-
 </ion-content>
+
+<ion-footer padding>
+    <ion-segment [(ngModel)]="viewMode">
+        <ion-segment-button value="list">Referral Dashboard
+            
+        </ion-segment-button>
+<!--         <ion-segment-button value="map" (ionSelect)="showMap()">
+            <ion-icon name="map"></ion-icon>
+        </ion-segment-button> -->
+    </ion-segment>
+</ion-footer>
+

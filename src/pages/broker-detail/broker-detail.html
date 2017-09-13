@@ -1,42 +1,89 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Broker</ion-title>
+        <ion-title>Property</ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content class="broker">
-
-    <ion-card>
-
+<ion-content>
+    <ion-card *ngIf="broker.id">      
         <ion-card-content>
-            <img src="{{broker.picture}}"/>
-            <h2>{{broker.name}}</h2>
-            <h3>{{broker.title}}</h3>
+            <h2 class="card-title">Referral Reasons</h2>
         </ion-card-content>
-
         <ion-list>
-            <a href="tel:{{broker.Phone__c}}" ion-item>
-                <ion-icon name="call" item-left></ion-icon>
-                <p>Call Office</p>
-                <h2>{{broker.phone}}</h2>
-            </a>
-            <a href="tel:{{broker.phone}}" ion-item>
-                <ion-icon name="call" item-left></ion-icon>
-                <p>Call Mobile</p>
-                <h2>{{broker.mobilePhone}}</h2>
-            </a>
-            <a href="tel:{{broker.phone}}" ion-item>
-                <ion-icon name="text" item-left></ion-icon>
-                <p>Text</p>
-                <h2>{{broker.mobilePhone}}</h2>
-            </a>
-            <a href="mailto:{{broker.email}}" ion-item>
-                <ion-icon name="mail" item-left></ion-icon>
-                <p>Email</p>
-                <h2>{{broker.email}}</h2>
-            </a>
+            <ion-item text-wrap>
+                <h3>Sum Insured is greater than $0.5m.</h3>
+                <ion-icon item-right name="attach"></ion-icon>
+            </ion-item>
+            <ion-item text-wrap>
+                <h3>Transaction request is backdated.</h3>
+                <ion-icon item-right name="attach"></ion-icon>
+            </ion-item>
+            <ion-item text-wrap>
+                <h3>Backdating of cancellation outside of cooling-off period.</h3>
+                <ion-icon item-right name="attach"></ion-icon>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card *ngIf="broker.id">      
+        <ion-card-content>
+            <h2 class="card-title">Coverage Information</h2>
+        </ion-card-content>
+        <ion-list>
+        <button class="item-style" ion-item detail-push *ngFor="let coverage of coverages" (click)="coverageTapped($event, coverage)">
+        {{coverage.value}}
+        </button>
+            <ion-item>
+                <ion-label>Broker Fees:</ion-label>
+                <ion-input [(ngModel)]="brokerFee" type="text" disabled="true">{{brokerFee}}</ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Referral Factor:</ion-label>
+                <ion-input style="font-size: 13px;" type="text" placeholder="Enter Referral Factor"></ion-input>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card *ngIf="broker.id">      
+        <ion-card-content>
+            <h2 class="card-title">Broker Comments</h2>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+              <ion-textarea placeholder="Enter Broker Comments"></ion-textarea>
+            </ion-item>
+        </ion-list>
+        
+    </ion-card>
+    <ion-card *ngIf="broker.id">      
+        <ion-card-content>
+            <h2 class="card-title">Underwriter Comments</h2>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+              <ion-textarea placeholder="Enter Underwriter comments"></ion-textarea>
+            </ion-item>
         </ion-list>
 
     </ion-card>
-
+    <ion-card *ngIf="broker.id">      
+        <ion-card-content>
+            <h2 class="card-title">Remarks</h2>
+        </ion-card-content>
+        <ion-list>
+            <ion-item>
+              <ion-textarea placeholder="Enter Remarks"></ion-textarea>
+            </ion-item>
+            
+        </ion-list>
+        <ion-item>
+            <button ion-button icon-left (click)="favorite(broker)" clear item-left>
+                <ion-icon name="Quote"></ion-icon>
+                Quote
+            </button>
+            <button ion-button icon-left (click)="decline(broker)" clear item-right>
+                <ion-icon name="Decline"></ion-icon>
+                Decline
+            </button>
+        </ion-item>
+    </ion-card>
+    
 </ion-content>

@@ -20,8 +20,12 @@ export class BrokerListPage {
     }
 
     onSearch(event) {
-        this.modalCtrl.create('HintModalPage', null, {  })
+        this.modalCtrl.create('SearchModalPage', null, {  })
                         .present();
+    }
+
+    onCancel(event) {
+        
     }
 
 }
