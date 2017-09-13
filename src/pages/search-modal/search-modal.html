@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Search</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+      <ion-icon name='close'></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-item tappable>
+    <ion-label color="primary">Quote/Policy Number</ion-label>
+    <ion-input type="text" placeholder="Quote/Policy Number"></ion-input>
+  </ion-item>
+  <ion-item>
+ 
+    <ion-label color="primary">Effective From</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" >Effective To</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate1"></ion-datetime>
+  </ion-item>
+  <ion-item tappable>
+    <ion-label color="primary" >Product Type</ion-label>
+    <ion-select [(ngModel)]="productType" interface="action-sheet">
+        <ion-option *ngFor="let product of products" value="{{product.value}}">{{product.value}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item tappable>
+    <ion-label color="primary">Cover Type</ion-label>
+    <ion-select [(ngModel)]="selectedCover" interface="action-sheet">
+        <ion-option *ngFor="let cover of covers" value="{{cover.value}}">{{cover.value}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item tappable>
+    <ion-label color="primary">Process Type</ion-label>
+    <ion-select [(ngModel)]="selectedProcess" interface="action-sheet">
+        <ion-option *ngFor="let process of processes" value="{{process.value}}">{{process.value}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+</ion-content>
+<ion-footer>
+  <button ion-button full  (click)="dismiss()">Search
+      </button>
+</ion-footer>

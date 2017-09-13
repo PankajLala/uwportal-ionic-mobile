@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {ActionSheetController, ActionSheet, NavController, NavParams, ToastController} from 'ionic-angular';
 import {BrokerDetailPage} from '../broker-detail/broker-detail';
 import {PropertyService} from '../../providers/property-service-mock';
+import {CoverageDetailPage } from '../coverage-detail/coverage-detail';
 
 @Component({
     selector: 'page-property-detail',
@@ -10,13 +11,25 @@ import {PropertyService} from '../../providers/property-service-mock';
 export class PropertyDetailPage {
 
     property: any;
+    brokerFee: number;
+    coverages: Array<{value: string}>;
 
     constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {
+        this.brokerFee = 20;
+        this.coverages = [
+      { value: 'Accidental Damage'},
+      { value: 'Listed Events'},
+      { value: 'Listed Events base'}
+    ]
         this.property = this.navParams.data;
         propertyService.findById(this.property.id).then(
             property => this.property = property
         );
     }
+
+    coverageTapped(event, coverage) {
+    this.navCtrl.push(CoverageDetailPage, coverage);
+  }
 
     openBrokerDetail(broker) {
         this.navCtrl.push(BrokerDetailPage, broker);

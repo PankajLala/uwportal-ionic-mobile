@@ -10,14 +10,17 @@
             <h2 class="card-title">Referral Reasons</h2>
         </ion-card-content>
         <ion-list>
-            <ion-item>
-                <h3>Reason 1</h3>
+            <ion-item text-wrap>
+                <h3>Sum Insured is greater than $0.5m.</h3>
+                <ion-icon item-right name="attach"></ion-icon>
             </ion-item>
-            <ion-item>
-                <h3>Reason 2</h3>
+            <ion-item text-wrap>
+                <h3>Transaction request is backdated.</h3>
+                <ion-icon item-right name="attach"></ion-icon>
             </ion-item>
-            <ion-item>
-                <h3>Reason 3</h3>
+            <ion-item text-wrap>
+                <h3>Backdating of cancellation outside of cooling-off period.</h3>
+                <ion-icon item-right name="attach"></ion-icon>
             </ion-item>
         </ion-list>
     </ion-card>
@@ -26,22 +29,18 @@
             <h2 class="card-title">Coverage Information</h2>
         </ion-card-content>
         <ion-list>
+
+        <button class="item-style" ion-item detail-push *ngFor="let coverage of coverages" (click)="coverageTapped($event, coverage)">
+        {{coverage.value}}
+        </button>
+
             <ion-item>
-                <h3>Reason 1</h3>
+                <ion-label>Broker Fees: </ion-label>
+                <ion-input [(ngModel)]="brokerFee" type="text" disabled="true">{{brokerFee}}</ion-input>
             </ion-item>
             <ion-item>
-                <h3>Reason 2</h3>
-            </ion-item>
-            <ion-item>
-                <h3>Reason 3</h3>
-            </ion-item>
-            <ion-item>
-                <ion-label>Broker Fees</ion-label>
-                <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label>Referral</ion-label>
-                <ion-input type="text"></ion-input>
+                <ion-label>Referral Factor: </ion-label>
+                <ion-input style="font-size: 13px;" type="text" placeholder="Enter Referral Factor"></ion-input>
             </ion-item>
         </ion-list>
     </ion-card>
@@ -51,7 +50,7 @@
         </ion-card-content>
         <ion-list>
             <ion-item>
-              <ion-textarea placeholder="Enter a description"></ion-textarea>
+              <ion-textarea placeholder="Enter Broker Comments"></ion-textarea>
             </ion-item>
         </ion-list>
         
@@ -62,7 +61,7 @@
         </ion-card-content>
         <ion-list>
             <ion-item>
-              <ion-textarea placeholder="Enter a description"></ion-textarea>
+              <ion-textarea placeholder="Enter Underwriter Comments"></ion-textarea>
             </ion-item>
         </ion-list>
 
@@ -73,7 +72,7 @@
         </ion-card-content>
         <ion-list>
             <ion-item>
-              <ion-textarea placeholder="Enter a description"></ion-textarea>
+              <ion-textarea placeholder="Enter Remarks"></ion-textarea>
             </ion-item>
             
         </ion-list>
