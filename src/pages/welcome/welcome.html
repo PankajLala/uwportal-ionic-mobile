@@ -1,19 +1,66 @@
-<ion-header>
+<!-- <ion-header>
     <ion-navbar>
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
-        </button>
+        </button> 
         <ion-title>Welcome</ion-title>
-    </ion-navbar>
+      </ion-navbar>  
 </ion-header>
 
 <ion-content no-bounce>
+
     <ion-slides>
 
         <ion-slide style="background-image: url('assets/img/bzlogo.png')">
+             <ion-grid >
+    <ion-row>
+      <ion-col center text-center>
+        <button ion-button full color="success" (click)="signup()">Sign up</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col center text-center>
+        <button ion-button full color="lightText" (click)="login()">Log in</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
             <p>Your preffered solution for Underwriting needs</p>
         </ion-slide>
 
     </ion-slides>
 
+</ion-content>
+ -->
+
+<ion-content padding id="welcome">
+  <img src="assets/img/bzlogo.png" class="logo"/>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1>Welcome to UW App</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid >
+    <ion-row>
+      <ion-col center text-center>
+ <ion-list>
+   <ion-item>
+     <ion-label floating>Username</ion-label>
+     <ion-input type="text"></ion-input>
+   </ion-item>
+ <ion-item>
+   <ion-label floating>Password</ion-label>
+     <ion-input type="password"></ion-input>
+   </ion-item>
+ </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col center text-center>
+        <button ion-button full color="lightText" (click)="login()">Log in</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
