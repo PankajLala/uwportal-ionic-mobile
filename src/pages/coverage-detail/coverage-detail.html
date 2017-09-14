@@ -9,11 +9,55 @@
 
 <ion-content>
   <ion-list>
-      <ion-item *ngFor="let item of character">
-        {{item.title}}
-        <ion-note item-right>
-          {{item.value}}
-        </ion-note>
-      </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Sno.</ion-label>
+      <ion-input class="coverage-align" [(ngModel)]="sno" type="text" readonly>{{sno}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Valuation Type: </ion-label>
+      <ion-input class="coverage-align" [(ngModel)]= "valuationType" type="text" readonly >{{valuationType}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Home Excess:</ion-label>
+      <ion-input class="coverage-align" [(ngModel)]="homeExcess" type="text" readonly>{{homeExcess}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Content Excess:</ion-label>
+      <ion-input class="coverage-align" [(ngModel)]="contentExcess" type="text" readonly>{{contentExcess}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Original Pre Tax Premium:</ion-label>
+      <ion-input class="coverage-align"  [(ngModel)]="orgPreTax" type="text" readonly>{{orgPreTax}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Original Post Tax Premium:</ion-label>
+      <ion-input class="coverage-align" [(ngModel)]="orgPosTax" type="text" readonly>{{orgPosTax}}</ion-input>
+    </ion-item> 
+    <ion-item text-wrap>     
+      <ion-label>Last Adjusted Pre Tax Premium:</ion-label>
+      <ion-input class="coverage-align" [(ngModel)]="lastAdjPreTax" type="text" readonly>{{lastAdjPreTax}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Last Adjusted Post Tax Premium:</ion-label>
+      <ion-input class="coverage-align" [(ngModel)]="lastAdjPostTax" type="text" readonly>{{lastAdjPostTax}}</ion-input>
+    </ion-item> 
+    <ion-item text-wrap> 
+      <ion-label stacked style="font-size: 1em;">UW Pre Tax Premium: {{uWPreTax}}</ion-label>
+      <ion-range min=1 max=1000 [(ngModel)]="uWPreTax" pin="true" style="font-size: 1em;">
+        <ion-icon range-left small> <b>1</b> </ion-icon>
+        <ion-icon range-right> <b>1000</b> </ion-icon>
+      </ion-range>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked style="font-size: 1em;">UW Post Tax Premium: {{uWPostTax}}</ion-label>
+      <ion-range min=1 max=1000 [(ngModel)]="uWPostTax" pin="true" style="font-size: 1em;">
+        <ion-icon range-left small> <b>1</b></ion-icon>
+        <ion-icon range-right> <b>1000</b> </ion-icon>
+      </ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-label>Risk Premium: </ion-label>
+      <ion-input class="coverage-align" [(ngModel)]="riskPremium" type="text" readonly>{{riskPremium}}</ion-input>
+    </ion-item>
   </ion-list>
 </ion-content>

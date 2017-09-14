@@ -6,23 +6,29 @@ import { NavController, NavParams,IonicPage } from 'ionic-angular';
   templateUrl: 'coverage-detail.html'
 })
 export class CoverageDetailPage {
-  character: any;
+  sno: any;
+  valuationType: any;
+  homeExcess: any;
+  contentExcess: any;
+  orgPreTax: any;
+  orgPosTax: any;
+  lastAdjPreTax: any;
+  lastAdjPostTax: any;
+  uWPreTax: any;
+  uWPostTax: any;
+  riskPremium:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    var characters = [
-      { title: 'SNo.', value: '1'},
-      { title: 'Valuation Type:', value: 'Accidental Damage'},
-      { title: 'Home Excess:', value: '-'},
-      { title: 'Content Excess:', value: '500'},
-      { title: 'Original Pre Tax Premium:', value: '601.75'},
-      { title: 'Original Post Tax Premium:', value: '721.50'},
-      { title: 'Last Adjusted Pre Tax Premium:', value: '-'},
-      { title: 'Last Adjusted Post Tax Premium:', value: '-' },
-      { title: 'UW Pre Tax Premium:', value: '601.75'},
-      { title: 'UW Post Tax Premium:', value: '721.50'},
-      { title: 'Risk Premium:', value: '508.48'}
-    ];
-    this.character = characters;
+    this.sno = 1;
+    this.valuationType =  'Accidental Damage';
+    this.homeExcess = '-';
+    this.contentExcess = '500';
+    this.orgPreTax = '601.75';
+    this.orgPosTax = '721.50';
+    this.lastAdjPreTax = '-';
+    this.lastAdjPostTax = '-';
+    this.uWPreTax = '601.75';
+    this.uWPostTax = '721.50';
+    this.riskPremium = '508.48';
   }
 }
