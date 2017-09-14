@@ -15,6 +15,7 @@ import {ListPage} from '../pages/list/list';
 import {HomePage} from '../pages/home/home';
 import {CoverageDetailPageModule} from '../pages/coverage-detail/coverage-detail.module';
 
+
 import {PropertyService} from "../providers/property-service-mock";
 import {BrokerService} from "../providers/broker-service-mock";
 
