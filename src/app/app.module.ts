@@ -8,12 +8,12 @@ import {WelcomePage} from '../pages/welcome/welcome';
 import {PropertyListPage} from '../pages/property-list/property-list';
 import {PropertyDetailPage} from '../pages/property-detail/property-detail';
 import {BrokerListPage} from '../pages/broker-list/broker-list';
-import {CoverageDetailPage} from '../pages/coverage-detail/coverage-detail';
 import {BrokerDetailPage} from '../pages/broker-detail/broker-detail';
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {AboutPage} from '../pages/about/about';
 import {ListPage} from '../pages/list/list';
 import {HomePage} from '../pages/home/home';
+import {CoverageDetailPageModule} from '../pages/coverage-detail/coverage-detail.module';
 
 import {PropertyService} from "../providers/property-service-mock";
 import {BrokerService} from "../providers/broker-service-mock";
@@ -32,12 +32,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrokerListPage,
     BrokerDetailPage,
     HomePage,
-    ListPage,
-    CoverageDetailPage
+    ListPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    CoverageDetailPageModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -51,8 +51,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrokerListPage,
     BrokerDetailPage,
     HomePage,
-    ListPage,
-    CoverageDetailPage
+    ListPage
   ],
   providers: [
     StatusBar,
