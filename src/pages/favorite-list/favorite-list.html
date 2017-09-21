@@ -3,23 +3,57 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Favorites</ion-title>
+        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+                       (ionCancel)="onCancel($event)" (click)="onSearch($event)"></ion-searchbar>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
     <ion-list>
-        <ion-item-sliding *ngFor="let favorite of favorites">
-            <button ion-item (click)="itemTapped(favorite)">
-                <ion-thumbnail item-left>
-                    <img src="{{favorite.property.thumbnail}}"/>
-                </ion-thumbnail>
-                <h2>{{favorite.property.title}}</h2>
-                <p>{{favorite.property.city}}, {{favorite.property.state}} ∙ {{favorite.property.price}}</p>
-            </button>
-            <ion-item-options>
-                <button danger (click)="deleteItem(favorite)">Delete</button>
-            </ion-item-options>
-        </ion-item-sliding>
+    <ion-item text-wrap>
+      <ion-label>Quote Number: </ion-label>
+      <ion-input  [(ngModel)]="sno" type="text" readonly>{{sno}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label> Policy Number: </ion-label>
+      <ion-input  [(ngModel)]= "valuationType" type="text" readonly >{{valuationType}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Product Type: </ion-label>
+      <ion-input  [(ngModel)]="homeExcess" type="text" readonly>{{homeExcess}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Quote Type: </ion-label>
+      <ion-input  [(ngModel)]="contentExcess" type="text" readonly>{{contentExcess}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Entered Date: </ion-label>
+      <ion-input   [(ngModel)]="orgPreTax" type="text" readonly>{{orgPreTax}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Effective Date: </ion-label>
+      <ion-input  [(ngModel)]="orgPosTax" type="text" readonly>{{orgPosTax}}</ion-input>
+    </ion-item> 
+    <ion-item text-wrap>     
+      <ion-label>Expiration Date: </ion-label>
+      <ion-input  [(ngModel)]="lastAdjPreTax" type="text" readonly>{{lastAdjPreTax}}</ion-input>
+    </ion-item>
+    <button ion-item (click)="premiumTapped($event)">
+        <h2>Premium Summary</h2>
+    </button>
+    <button ion-item (click)="ratingTapped($event)">
+        <h2>Rating Summary</h2>
+    </button>
     </ion-list>
 </ion-content>
+
+<ion-footer padding>
+    <ion-segment [(ngModel)]="viewMode">
+        <ion-segment-button value="list">Rating Summary
+            
+        </ion-segment-button>
+<!--         <ion-segment-button value="map" (ionSelect)="showMap()">
+            <ion-icon name="map"></ion-icon>
+        </ion-segment-button> -->
+    </ion-segment>
+</ion-footer>

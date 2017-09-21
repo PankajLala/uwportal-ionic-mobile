@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Rating Summary</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item text-wrap>
+      <ion-label>Address GNAF relativity:</ion-label>
+      <ion-input  [(ngModel)]="sno" type="text" readonly>{{sno}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Payment frequency relativity: </ion-label>
+      <ion-input  [(ngModel)]= "valuationType" type="text" readonly >{{valuationType}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Existing policy relativity: </ion-label>
+      <ion-input  [(ngModel)]="homeExcess" type="text" readonly>{{homeExcess}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Business From Home Relativity: </ion-label>
+      <ion-input  [(ngModel)]="contentExcess" type="text" readonly>{{contentExcess}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Home SumInsured Relativity: </ion-label>
+      <ion-input   [(ngModel)]="orgPreTax" type="text" readonly>{{orgPreTax}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Roof Type Relativity: </ion-label>
+      <ion-input  [(ngModel)]="orgPosTax" type="text" readonly>{{orgPosTax}}</ion-input>
+    </ion-item> 
+    <ion-item text-wrap>     
+      <ion-label>Slope Type Relativity:</ion-label>
+      <ion-input  [(ngModel)]="lastAdjPreTax" type="text" readonly>{{lastAdjPreTax}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Occupancy Type Relativity:</ion-label>
+      <ion-input  [(ngModel)]="lastAdjPostTax" type="text" readonly>{{lastAdjPostTax}}</ion-input>
+    </ion-item> 
+    <ion-item text-wrap>
+      <ion-label>Previous Claims Relativity: </ion-label>
+      <ion-input  [(ngModel)]="lastAdjPostTax" type="text" readonly>{{uWPreTax}}</ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label>Policyholder Age Relativity: </ion-label>
+      <ion-input  [(ngModel)]="lastAdjPostTax" type="text" readonly>{{uWPostTax}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Levels Of Home Relativity: </ion-label>
+      <ion-input  [(ngModel)]="riskPremium" type="text" readonly>{{riskPremium}}</ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

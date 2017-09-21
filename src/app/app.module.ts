@@ -13,6 +13,8 @@ import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {AboutPage} from '../pages/about/about';
 import {ListPage} from '../pages/list/list';
 import {HomePage} from '../pages/home/home';
+import {PremiumDetailPage} from '../pages/premium-detail/premium-detail';
+import {RatingDetailPage} from '../pages/rating-detail/rating-detail';
 import {CoverageDetailPageModule} from '../pages/coverage-detail/coverage-detail.module';
 
 
@@ -33,7 +35,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrokerListPage,
     BrokerDetailPage,
     HomePage,
-    ListPage
+    ListPage,
+    PremiumDetailPage,
+    RatingDetailPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrokerListPage,
     BrokerDetailPage,
     HomePage,
-    ListPage
+    ListPage,
+    PremiumDetailPage,
+    RatingDetailPage
   ],
   providers: [
     StatusBar,
