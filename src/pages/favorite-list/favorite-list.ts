@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {PropertyService} from '../../providers/property-service-mock';
-import {PropertyDetailPage} from '../property-detail/property-detail';
+import {PremiumDetailPage } from '../premium-detail/premium-detail';
+import {RatingDetailPage} from '../rating-detail/rating-detail';
 
 @Component({
     selector: 'page-favorite-list',
@@ -9,27 +10,34 @@ import {PropertyDetailPage} from '../property-detail/property-detail';
 })
 export class FavoriteListPage {
 
-    favorites: Array<any>;
+ sno: any;
+  valuationType: any;
+  homeExcess: any;
+  contentExcess: any;
+  orgPreTax: any;
+  orgPosTax: any;
+  lastAdjPreTax: any;
+  lastAdjPostTax: any;
+  uWPreTax: any;
+  uWPostTax: any;
+  riskPremium:any;
 
-    constructor(public navCtrl: NavController, public service: PropertyService) {
-        this.getFavorites();
+    constructor(public navCtrl: NavController) {
+    this.sno = 123;
+    this.valuationType =  '123';
+    this.homeExcess = 'Home';
+    this.contentExcess = 'New Business';
+    this.orgPreTax = '22/08/2017';
+    this.orgPosTax = '22/08/2017';
+    this.lastAdjPreTax = '22/08/2017';
     }
 
-    itemTapped(favorite) {
-        this.navCtrl.push(PropertyDetailPage, favorite.property);
-    }
 
-    deleteItem(favorite) {
-        this.service.unfavorite(favorite)
-            .then(() => {
-                this.getFavorites();
-            })
-            .catch(error => alert(JSON.stringify(error)));
-    }
+    premiumTapped(event) {
+    this.navCtrl.push(PremiumDetailPage);
+  }
 
-    getFavorites() {
-        this.service.getFavorites()
-            .then(data => this.favorites = data);
+    ratingTapped(event, coverage) {
+        this.navCtrl.push(RatingDetailPage);
     }
-
 }
