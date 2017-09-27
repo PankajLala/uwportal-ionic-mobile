@@ -36,16 +36,16 @@ export class MyApp {
             {title: 'Home', component: PropertyListPage, icon: 'home'},
             {title: 'Referral Dashboard', component: BrokerListPage, icon: 'people'},
             {title: 'Rating Summary', component: FavoriteListPage, icon: 'star'},
-            {title: 'Postcode Embargo', component: WelcomePage, icon: 'checkmark-circle'},
+            {title: 'Postcode Embargo', component: null, icon: 'checkmark-circle'},
         ];
 
         this.accountMenuItems = [
-            {title: 'My Account', component: WelcomePage, icon: 'ios-contact'},
+            {title: 'My Account', component: null, icon: 'ios-contact'},
             {title: 'Logout', component: WelcomePage, icon: 'log-out'},
         ];
 
         this.helpMenuItems = [
-            {title: 'Welcome', component: WelcomePage, icon: 'bookmark'},
+            {title: 'Welcome', component: null, icon: 'bookmark'},
             {title: 'About', component: AboutPage, icon: 'information-circle'},
         ];
 
@@ -63,6 +63,9 @@ export class MyApp {
     openPage(page) {
         // Reset the content nav to have just this page
         // we wouldn't want the back button to show in this scenario
-        this.nav.setRoot(page.component);
+        if(page.component){
+            this.nav.setRoot(page.component);
+        }
+        
     }
 }
