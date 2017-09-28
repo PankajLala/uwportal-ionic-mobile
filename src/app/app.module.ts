@@ -15,6 +15,7 @@ import {ListPage} from '../pages/list/list';
 import {HomePage} from '../pages/home/home';
 import {PremiumDetailPage} from '../pages/premium-detail/premium-detail';
 import {RatingDetailPage} from '../pages/rating-detail/rating-detail';
+import {QuoteDetailPage} from '../pages/quote-detail/quote-detail';
 import {CoverageDetailPageModule} from '../pages/coverage-detail/coverage-detail.module';
 
 
@@ -37,7 +38,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     PremiumDetailPage,
-    RatingDetailPage
+    RatingDetailPage,
+    QuoteDetailPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     PremiumDetailPage,
-    RatingDetailPage
+    RatingDetailPage,
+    QuoteDetailPage
   ],
   providers: [
     StatusBar,

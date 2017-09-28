@@ -1,37 +1,33 @@
-
 <ion-content>
-  <ion-list>
+<ion-list>
     <ion-item text-wrap>
-      <ion-label>Pre Tax Prem:</ion-label>
+      <ion-label>Quote Number: </ion-label>
       <ion-input  [(ngModel)]="sno" type="text" readonly>{{sno}}</ion-input>
     </ion-item>
     <ion-item text-wrap>
-      <ion-label>Commission: </ion-label>
+      <ion-label> Policy Number: </ion-label>
       <ion-input  [(ngModel)]= "valuationType" type="text" readonly >{{valuationType}}</ion-input>
     </ion-item>
     <ion-item text-wrap>
-      <ion-label>Commission GST:</ion-label>
+      <ion-label>Product Type: </ion-label>
       <ion-input  [(ngModel)]="homeExcess" type="text" readonly>{{homeExcess}}</ion-input>
     </ion-item>
     <ion-item text-wrap>
-      <ion-label>FSL:</ion-label>
+      <ion-label>Quote Type: </ion-label>
       <ion-input  [(ngModel)]="contentExcess" type="text" readonly>{{contentExcess}}</ion-input>
     </ion-item>
     <ion-item text-wrap>
-      <ion-label>SD:</ion-label>
+      <ion-label>Entered Date: </ion-label>
       <ion-input   [(ngModel)]="orgPreTax" type="text" readonly>{{orgPreTax}}</ion-input>
     </ion-item>
     <ion-item text-wrap>
-      <ion-label>GST:</ion-label>
+      <ion-label>Effective Date: </ion-label>
       <ion-input  [(ngModel)]="orgPosTax" type="text" readonly>{{orgPosTax}}</ion-input>
     </ion-item> 
     <ion-item text-wrap>     
-      <ion-label>Gross Prem:</ion-label>
+      <ion-label>Expiration Date: </ion-label>
       <ion-input  [(ngModel)]="lastAdjPreTax" type="text" readonly>{{lastAdjPreTax}}</ion-input>
     </ion-item>
-    <ion-item text-wrap>     
-      <ion-label>Description:</ion-label>
-      <ion-input  [(ngModel)]="lastAdjPreTax" type="text" readonly>{{lastAdjPreTax}}</ion-input>
-    </ion-item>
-  </ion-list>
+
+</ion-list>
 </ion-content>

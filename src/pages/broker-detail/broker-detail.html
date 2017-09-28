@@ -7,70 +7,70 @@
 <ion-content>
     <ion-card *ngIf="broker.id">      
         <ion-card-content>
-            <h2 class="card-title">Referral Reasons</h2>
+            <h2 class="card-title header-size">Referral Reasons</h2>
         </ion-card-content>
         <ion-list>
             <ion-item text-wrap>
-                <h3>Sum Insured is greater than $0.5m.</h3>
+                <h3 class="item-size">Sum Insured is greater than $0.5m.</h3>
                 <ion-icon item-right name="attach"></ion-icon>
             </ion-item>
             <ion-item text-wrap>
-                <h3>Transaction request is backdated.</h3>
+                <h3 class="item-size">Transaction request is backdated.</h3>
                 <ion-icon item-right name="attach"></ion-icon>
             </ion-item>
             <ion-item text-wrap>
-                <h3>Backdating of cancellation outside of cooling-off period.</h3>
+                <h3 class="item-size">Backdating of cancellation outside of cooling-off period.</h3>
                 <ion-icon item-right name="attach"></ion-icon>
             </ion-item>
         </ion-list>
     </ion-card>
     <ion-card *ngIf="broker.id">      
         <ion-card-content>
-            <h2 class="card-title">Coverage Information</h2>
+            <h2 class="card-title header-size">Coverage Information</h2>
         </ion-card-content>
         <ion-list>
-        <button class="item-style" ion-item detail-push *ngFor="let coverage of coverages" (click)="coverageTapped($event, coverage)">
-        {{coverage.value}}
-        </button>
+            <button class="item-style item-size" ion-item detail-push *ngFor="let coverage of coverages" (click)="coverageTapped($event, coverage)">
+            {{coverage.value}}
+            </button>
             <ion-item>
-                <ion-label>Broker Fees:</ion-label>
-                <ion-input [(ngModel)]="brokerFee" type="text" disabled="true">{{brokerFee}}</ion-input>
+                <ion-label class="item-size">Broker Fees:</ion-label>
+                <ion-input class="text-alignment item-size" [(ngModel)]="brokerFee" type="text" readonly>{{brokerFee}}</ion-input>
             </ion-item>
             <ion-item>
-                <ion-label>Referral Factor:</ion-label>
-                <ion-input style="font-size: 13px;" type="text" placeholder="Enter Referral Factor"></ion-input>
+                <ion-label class="item-size">Referral Factor:</ion-label>
+                <ion-input class="item-size" type="text" [(ngModel)]="referralFactor" placeholder="Enter Referral Factor">{{referralFactor}}</ion-input>
             </ion-item>
         </ion-list>
     </ion-card>
     <ion-card *ngIf="broker.id">      
         <ion-card-content>
-            <h2 class="card-title">Broker Comments</h2>
+            <h2 class="card-title header-size">Broker Comments</h2>
         </ion-card-content>
         <ion-list>
             <ion-item>
-              <ion-textarea placeholder="Enter Broker Comments"></ion-textarea>
+              <ion-textarea class="item-size" placeholder="Enter Broker Comments"></ion-textarea>
             </ion-item>
         </ion-list>
         
     </ion-card>
     <ion-card *ngIf="broker.id">      
         <ion-card-content>
-            <h2 class="card-title">Underwriter Comments</h2>
+            <h2 class="card-title header-size">Underwriter Comments</h2>
         </ion-card-content>
         <ion-list>
             <ion-item>
-              <ion-textarea placeholder="Enter Underwriter comments"></ion-textarea>
+              <ion-textarea class="item-size" placeholder="Enter Underwriter comments"></ion-textarea>
             </ion-item>
         </ion-list>
 
     </ion-card>
     <ion-card *ngIf="broker.id">      
         <ion-card-content>
-            <h2 class="card-title">Remarks</h2>
+            <h2 class="card-title header-size">Remarks</h2>
         </ion-card-content>
         <ion-list>
             <ion-item>
-              <ion-textarea placeholder="Enter Remarks"></ion-textarea>
+              <ion-textarea class="item-size"  placeholder="Enter Remarks"></ion-textarea>
             </ion-item>
             
         </ion-list>

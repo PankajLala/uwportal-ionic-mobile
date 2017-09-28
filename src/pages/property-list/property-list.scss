@@ -12,3 +12,11 @@ inset-modal {
   transition: opacity .25s ease-in-out;
   padding: 20vh 10vw;
 }
+
+.footer-display {
+    color: #fff !important;
+    background-color: #3399FF !important;
+    opacity: 1 !important;
+    transition: 100ms all linear !important;
+    border-radius: 4px 4px 4px 4px !important;
+}

@@ -11,6 +11,7 @@ export class BrokerDetailPage {
 
     broker: any;
     brokerFee: number;
+    referralFactor: number;
     coverages: Array<{value: string}>;
     constructor(public navCtrl: NavController, public navParams: NavParams, public service: BrokerService, public toastCtrl: ToastController) {
         this.broker = this.navParams.data;

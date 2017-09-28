@@ -12,6 +12,7 @@ export class PropertyDetailPage {
 
     property: any;
     brokerFee: number;
+    referralFactor: number;
     coverages: Array<{value: string}>;
 
     constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {

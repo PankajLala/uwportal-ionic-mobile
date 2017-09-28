@@ -22,7 +22,6 @@
       }
 
       h2 {
-        font-size: 2.5rem;
         margin-top: .5rem;
         color: white;
       }
@@ -36,4 +35,18 @@
 
   }
 
+}
+
+ion-input{
+  input{
+  text-align: end;
+  }
+}
+
+.item-size {
+  font-size: 1.5rem !important;
+}
+
+.header-size {
+  font-size: 1.7rem !important;
 }

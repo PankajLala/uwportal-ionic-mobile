@@ -42,7 +42,7 @@
       <ion-input  [(ngModel)]="lastAdjPostTax" type="text" readonly>{{lastAdjPostTax}}</ion-input>
     </ion-item> 
     <ion-item text-wrap> 
-      <ion-label stacked >UW Pre Tax Premium: {{uWPreTax}}</ion-label>
+      <ion-label class="range-size" stacked >UW Pre Tax Premium: {{uWPreTax}}</ion-label>
       
       <ion-range min=1 max=1000 [(ngModel)]="uWPreTax" pin="true">
         <ion-icon range-left small style="font-size: 15px">1</ion-icon>
@@ -50,13 +50,13 @@
       </ion-range>
     </ion-item>
     <ion-item text-wrap>
-      <ion-label stacked >UW Post Tax Premium: {{uWPostTax}}</ion-label>
+      <ion-label class="range-size" stacked >UW Post Tax Premium: {{uWPostTax}}</ion-label>
       <ion-range min=1 max=1000 [(ngModel)]="uWPostTax" pin="true">
         <ion-icon range-left small style="font-size: 15px">1</ion-icon>
         <ion-icon range-right style="font-size: 15px">1000</ion-icon>
       </ion-range>
     </ion-item>
-    <ion-item>
+    <ion-item text-wrap>
       <ion-label>Risk Premium: </ion-label>
       <ion-input  [(ngModel)]="riskPremium" type="text" readonly>{{riskPremium}}</ion-input>
     </ion-item>
